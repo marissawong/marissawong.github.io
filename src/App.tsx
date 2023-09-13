@@ -17,7 +17,12 @@ function App() {
         <div>construção</div>
       </div>
       <div className="contact">
-        <div className="email">contato@marissa.com.br</div>
+        <div
+          className="email"
+          onClick={() => window.open("mailto:contato@marissa.com.br", "_blank")}
+        >
+          contato@marissa.com.br
+        </div>
         <div className="links">
           {links.map((l, index) => (
             <>
