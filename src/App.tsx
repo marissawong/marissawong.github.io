@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+const links = [
+  {
+    name: "linkedin",
+    url: "https://www.linkedin.com/in/marissawongn/",
+  },
+  {
+    name: "dev",
+    url: "https://dev.to/marissa",
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="soon">
+      <div className="title">
+        <div>site em</div>
+        <div>construção</div>
+      </div>
+      <div className="contact">
+        <div className="email">contato@marissa.com.br</div>
+        <div className="links">
+          {links.map((l, index) => (
+            <>
+              <div
+                className="social"
+                onClick={() => window.open(l.url, "_blank")}
+              >
+                {l.name}
+              </div>
+              {links.length > index + 1 && <div className="divider"></div>}
+            </>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
